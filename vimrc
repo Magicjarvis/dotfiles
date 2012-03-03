@@ -70,7 +70,6 @@ nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 inoremap jj <ESC>
 inoremap kk <ESC>
-inoremap <ESC> <NOP>
 
 set ruler " Show ruler
 
