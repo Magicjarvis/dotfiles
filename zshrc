@@ -37,3 +37,5 @@ source $ZSH/oh-my-zsh.sh
 alias rm="rm -i"
 alias gman="git help"
 alias fixmongo="sudo rm -f /var/lib/mongodb/mongod.lock && sudo service mongodb start"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
