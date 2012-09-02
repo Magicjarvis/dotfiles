@@ -17,12 +17,13 @@ filetype plugin on
 
 set expandtab
 
-set number
-" autocmds
-autocmd FileType python set expandtab tabstop=4 shiftwidth=4
+set number " autocmds autocmd FileType python set expandtab tabstop=4 shiftwidth=4
 autocmd FileType jade set expandtab tabstop=2 shiftwidth=2
 autocmd FileType ruby set expandtab tabstop=2 shiftwidth=2
 autocmd FileType java set expandtab tabstop=2 shiftwidth=2
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 set hidden " Allow hidden unsaved buffers
 set laststatus=2 " Always show status line
@@ -42,15 +43,12 @@ set ignorecase
 set smartcase
 set incsearch
 
-
 " Invisible characters
 set listchars=tab:>-,trail:-
 
 " Intelligent indenting
 set autoindent
 set cindent
-
-
 
 set tabstop=2
 set softtabstop=2
@@ -109,7 +107,7 @@ let loaded_minibufexplorer = 1 " Disable MiniBufExplorer
 " Jump between if's, HTML/XML tags, etc. with %
 runtime macros/matchit.vim
 
-let mapleader = "\\"
+let mapleader = ";"
 
 " Leader maps
 nmap <Leader>w :w<CR>
@@ -122,10 +120,9 @@ nmap <Leader>k :bn<CR>
 nmap <Leader>j :bp<CR>
 nmap <Leader>o :b#<CR>
 nmap <Leader>t :tabnew<Space>
+nmap <Leader>m :make<CR><CR><CR>
 inoremap <Leader>w <ESC>:w<CR>
 inoremap <Leader>q :q<CR>
-
-
 
 " vim-latexsuite
 set grepprg=grep\ -nH\ $*

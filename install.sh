@@ -8,7 +8,7 @@ cd -
 mkdir ~/.vim/bundle
 cd ~/.vim/bundle
 git init
-git submodule add git@github.com:flazz/vim-colorschemes.git colorschemes
+git submodule add git@github.com:flazz/vim-colorschemes.git
 git submodule add https://github.com/Raimondi/delimitMate.git
 cd -
 
