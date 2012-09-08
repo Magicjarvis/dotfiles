@@ -1,26 +1,35 @@
 set nocompatible
 "something
 set visualbell
+filetype off
 
-" pathogen
-silent! call pathogen#runtime_append_all_bundles()
+" Vundle
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'Raimondi/delimitMate'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Syntastic'
+Bundle 'SuperTab'
+
 
 " colors
 set t_Co=256
 set background=dark
 colorschem ir_black
 
-" syntax highlighting and filetype specific stuff
-syntax on filetype on filetype plugin on
+" syntax highlighting
+syntax on
 filetype indent on
 filetype plugin on
 
 set expandtab
 
 set number " autocmds autocmd FileType python set expandtab tabstop=4 shiftwidth=4
-autocmd FileType jade set expandtab tabstop=2 shiftwidth=2
-autocmd FileType ruby set expandtab tabstop=2 shiftwidth=2
-autocmd FileType java set expandtab tabstop=2 shiftwidth=2
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -34,7 +43,7 @@ set nowrap " don't wrap lines
 set wildmenu
 set wildmode=longest:list
 
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.out
 
 set history=500 " Longer history
 
@@ -101,6 +110,8 @@ set colorcolumn=+1
 hi ColorColumn ctermbg=grey
 
 set backspace=eol,start,indent " Backspace config
+
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -pedantic -Wall -Werror -Weffc++ -Wextra -Wmain -Wshadow'
 
 let loaded_minibufexplorer = 1 " Disable MiniBufExplorer
 
