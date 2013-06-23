@@ -13,9 +13,11 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
+
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Syntastic'
 Bundle 'SuperTab'
-
 
 " colors
 set t_Co=256
@@ -45,6 +47,7 @@ set wildmode=longest:list
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.out
 
+set undofile
 set history=500 " Longer history
 
 " Intelligent case searching
@@ -67,7 +70,8 @@ set showmatch " Parenthesis matching
 
 set title " Set title
 
-set directory=$HOME/.vim/tmp//,. "keep swap files in one location
+set dir=$HOME/.vim/tmp//,. "keep swap files in one location
+set backupdir=$HOME/.vim/tmp//,. "keep swap files in one location
 
 " Faster scrolling
 nnoremap <C-e> 3<C-e>
@@ -75,9 +79,6 @@ nnoremap <C-y> 3<C-y>
 
 vmap > >gv
 vmap < <gv
-
-
-" dear god, no shift
 
 " remove arrow keys
 nmap <F2>;set paste! paste?<CR>
@@ -92,17 +93,11 @@ nnoremap <Down> <NOP>
 inoremap jj <ESC>
 inoremap kk <ESC>
 
-inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-\ "\<lt>C-n>" :
-\ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-\ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-\ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-imap <C-@> <C-Space>
-
 set ruler " Show ruler
 
-nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+" Restore window size
+nnoremap <C-0> - :exe "resize " . (winheight(0))<CR>
+
 
 " 80 character width plus highlighting boundary
 set textwidth=78
@@ -112,8 +107,6 @@ hi ColorColumn ctermbg=grey
 set backspace=eol,start,indent " Backspace config
 
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -pedantic -Wall -Werror -Weffc++ -Wextra -Wmain -Wshadow'
-
-let loaded_minibufexplorer = 1 " Disable MiniBufExplorer
 
 " Jump between if's, HTML/XML tags, etc. with %
 runtime macros/matchit.vim
