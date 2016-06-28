@@ -22,7 +22,7 @@ Bundle 'SuperTab'
 " colors
 set t_Co=256
 set background=dark
-colorschem ir_black
+"colorschem ir_black
 
 " syntax highlighting
 syntax on
@@ -62,9 +62,9 @@ set listchars=tab:>-,trail:-
 set autoindent
 set cindent
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 set showmatch " Parenthesis matching
 
@@ -132,3 +132,4 @@ inoremap <Leader>q :q<CR>
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_DefaultTargetFormat = 'pdf'
+let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
