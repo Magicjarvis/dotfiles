@@ -35,7 +35,29 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 alias rm="rm -i"
-alias gman="git help"
-alias fixmongo="sudo rm -f /var/lib/mongodb/mongod.lock && sudo service mongodb start"
+alias pf="find . -name '*.py' | xargs grep -I"
+alias pj="find . -name '*.js*' | xargs grep -I"
+alias cdw="cd ~/webdev/"
+alias cdp="cd ~/webdev/code/patreon_py/"
+alias cdd="cd ~/webdev/db/"
+alias cdr="cd ~/webdev/react/patreon_react_features/"
+alias dcup="docker-compose -p minimal -f docker-compose.yml up"
+alias gp="git push origin HEAD"
+alias gpu="git pull"
+alias gpur="git pull origin master --rebase"
+alias schema="cdp && vi database/schema.sql"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+alias vi="/usr/local/Cellar/vim/7.4.1952/bin/vim"
+alias j='vi ~/todo/jarvis.diff'
+
+#export DOCKER_TLS_VERIFY="1"
+#export DOCKER_HOST="tcp://192.168.99.100:2376"
+#export DOCKER_CERT_PATH="/Users/jarvis/.docker/machine/machines/default"
+#export DOCKER_MACHINE_NAME="default"
+# Run this command to configure your shell:
+#eval $(docker-machine env default)
+# cat not_impersonators.txt | xargs -n 1 echo 'http://patreon.com/user?u=' | sed -e 's/ //g' | xargs open
+
+#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages

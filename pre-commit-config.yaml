@@ -1,0 +1,8 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: '775a7906cd6004bec2401a85ed16d5b3540d2f94'
+    hooks:
+    -   id: trailing-whitespace
+    -   id: autopep8-wrapper
+        args: ['-i', '--ignore=E128,E221,E241,E261,E301,E309,E402,E711,E731,W503', '--max-line-length=120']
+    -   id: flake8
+    -   id: requirements-txt-fixer

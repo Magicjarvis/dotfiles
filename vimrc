@@ -8,7 +8,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'Raimondi/delimitMate'
+Bundle 'Townk/vim-autoclose'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'tpope/vim-surround'
