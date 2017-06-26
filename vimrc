@@ -8,6 +8,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'junegunn/goyo.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-fugitive'
@@ -18,7 +19,7 @@ Bundle 'rking/ag.vim'
 Bundle 'Chun-Yang/vim-action-ag'
 
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Syntastic'
 Bundle 'SuperTab'
 
@@ -31,7 +32,7 @@ call vundle#end()
 " colors
 set t_Co=256
 set background=dark
-colorschem ir_black
+colorschem Tomorrow-Night
 
 " syntax highlighting
 syntax on
@@ -136,9 +137,11 @@ nmap <Leader>Q :quitall<CR>
 nmap <Leader>s :set list! list?<CR>
 nmap <Leader>n :set number! number?<CR>
 nmap <Leader>h :set hlsearch! hlsearch?<CR>
+nmap <Leader>g :GitGutterToggle<CR>
+nmap <Leader>f :Goyo<CR>
 nmap <Leader>k :bn<CR>
-nmap <Leader>d :bd<CR>
 nmap <Leader>j :bp<CR>
+nmap <Leader>d :bd<CR>
 nmap <Leader>o :b#<CR>
 nmap <Leader>t :tabnew<Space>
 nmap <Leader>m :make<CR><CR><CR>

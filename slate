@@ -30,8 +30,6 @@ bind b:shift;cmd ${bottomleft}
 bind y:shift;cmd ${topleft}
 bind l:shift;cmd ${righthalf}
 bind l:shift;alt;cmd ${rightthird}
-bind .:shift;cmd ${bottomright}
-bind p:shift;cmd ${topright}
 
 # Resize - Resizes the window in the specified direction
 bind l:alt resize +10% +0
@@ -39,11 +37,6 @@ bind j:alt resize +0 +10%
 bind k:alt resize +0 -10%
 bind h:alt resize -10% +0
   
-# Nudge - Nudges the window in the specified direction 
-bind l:shift;ctrl nudge +10% +0
-bind k:shift;ctrl nudge +0 -10%
-bind j:shift;ctrl nudge +0 +10% 
-bind h:shift;ctrl nudge -10% +0
 
 # Focus - Brings the focus to the window in the specified position                                     
 bind l:shift;alt focus right
