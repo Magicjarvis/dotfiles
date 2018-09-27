@@ -20,7 +20,7 @@ Bundle 'Chun-Yang/vim-action-ag'
 
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'fholgado/minibufexpl.vim'
-Bundle 'Syntastic'
+"Bundle 'vim-syntastic/syntastic'
 Bundle 'SuperTab'
 
 call vundle#end()
@@ -152,7 +152,13 @@ inoremap <Leader>q :q<CR>
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_DefaultTargetFormat = 'pdf'
-let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'python'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let g:syntastic_auto_loc_list=1
+let g:syntastic_python_checkers = ['flake8', 'mypy']
+" XXX filtering out pylint errors caused by not being in a venv and namedtuples being considered not callable
+let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings", "regex": ["import-error", "no-member", "not-callable", "semicolon", "unsubscriptable-object"] }
+let g:syntastic_python_mypy_args = "--follow-imports skip"
+let g:syntastic_python_mypy_quiet_messages = { "regex": ["No library stub file for module", "asynq", "generator"]}
 
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
